@@ -6,10 +6,10 @@ class ChartImageViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let result = chart.drawImage(self.imageView.frame, scale: UIScreen.mainScreen().scale)
+        let result = chart.drawImage(frame: self.imageView.frame, scale: UIScreen.main.scale)
         if let img = result as? UIImage {
             imageView.image = img;
         }

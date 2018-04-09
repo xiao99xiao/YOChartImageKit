@@ -10,89 +10,89 @@ enum YOChart {
             let image = YOLineChartImage()
             image.strokeWidth = 4.0
             image.strokeColor = randomColor()
-            image.values = (0...10).map { _ in CGFloat(arc4random_uniform(8)) }
+            image.values = (0...10).map { _ in NSNumber(value: arc4random_uniform(8)) }
             image.smooth = false
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .SmoothLineChart:
             let image = YOLineChartImage()
             image.fillColor = randomColor()
             image.values = [4.0, 5.0, -3.0, -1.0, 3.5]
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .VerticalBarChart:
             let image = YOBarChartImage()
             image.fillColor = randomColor()
             image.barPadding = 2.0
-            image.values = (0..<15).map { _ in CGFloat(arc4random_uniform(50) + 1) }
-            return image.drawImage(frame, scale: scale)
+            image.values = (0..<15).map { _ in NSNumber(value: arc4random_uniform(50) + 1) }
+            return image.draw(frame, scale: scale)
         case .HorizontalBarChart:
             let image = YOBarChartImage()
             image.fillColor = randomColor()
             image.barPadding = 2.0
-            image.barStyle = .Horizontal
-            image.values = (0..<8).map { _ in CGFloat(arc4random_uniform(50) + 1) }
-            return image.drawImage(frame, scale: scale)
+            image.barStyle = .horizontal
+            image.values = (0..<8).map { _ in NSNumber(value: arc4random_uniform(50) + 1) }
+            return image.draw(frame, scale: scale)
         case .DonutChart:
             let image = YODonutChartImage()
             image.donutWidth = 16.0
             image.labelText = "LABEL"
-            image.labelColor = UIColor.whiteColor()
+            image.labelColor = UIColor.white
             image.values = [10.0, 20.0, 70.0]
             image.colors = (0..<3).map { _ in randomColor() }
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .SolidLineChartGradient:
             let image = YOLineChartImage()
             image.strokeWidth = 0.0
             image.gradientFill = true
             image.firstGradientColor = randomColor()
             image.secondGradientColor = randomColor()
-            image.values = (0...10).map { _ in CGFloat(arc4random_uniform(8)) }
+            image.values = (0...10).map { _ in NSNumber(value: arc4random_uniform(8)) }
             image.smooth = false
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .SmoothLineChartGradient:
             let image = YOLineChartImage()
             image.strokeWidth = 1.0
-            image.strokeColor = UIColor.whiteColor()
+            image.strokeColor = UIColor.white
             image.gradientFill = true
-            image.firstGradientColor = UIColor.whiteColor()
+            image.firstGradientColor = UIColor.white
             image.secondGradientColor = randomColor()
-            image.values = (0...10).map { _ in CGFloat(arc4random_uniform(8)) }
+            image.values = (0...10).map { _ in NSNumber(value: arc4random_uniform(8)) }
             image.smooth = true
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .VerticalBarChartGradient:
             let image = YOBarChartImage()
             image.onlyPositiveBars = true
-            image.positiveColor = UIColor.whiteColor()
-            image.positiveGradientColor = UIColor.greenColor()
-            image.negativeColor = UIColor.whiteColor()
-            image.negativeGradientColor = UIColor.redColor()
+            image.positiveColor = UIColor.white
+            image.positiveGradientColor = UIColor.green
+            image.negativeColor = UIColor.white
+            image.negativeGradientColor = UIColor.red
             image.barPadding = 20.0
             image.roundedCaps = true
             image.capsCornerRadius = 10.0
             image.values = [4.0, 5.0, -3.0, -1.0, 3.5]
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .GearChart:
             let image = YOGearChartImage()
             image.gearWidth = 10.0
             image.labelText = "80%"
-            image.labelColor = UIColor.whiteColor()
+            image.labelColor = UIColor.white
             image.value = 80.0
             image.color = randomColor()
             image.backgroundColor = image.color
             image.backgroundColorAlpha = 0.2
-            return image.drawImage(frame, scale: scale)
+            return image.draw(frame, scale: scale)
         case .AnimatedDonutChart:
             let image = YODonutChartImage()
             image.donutWidth = 24.0
             image.values = [40.0, 10.0, 15.0, 5.0, 30.0]
             image.colors = (0...5).map { _ in randomColor() }
             image.animationSteps = 50
-            image.animationBackgroundColor = UIColor.darkGrayColor()
+            image.animationBackgroundColor = UIColor.darkGray
             return image.drawAnimationImages(frame, scale: scale)
         case .AnimatedGearChart:
             let image = YOGearChartImage()
             image.gearWidth = 15.0
             image.labelText = "75%"
-            image.labelColor = UIColor.whiteColor()
+            image.labelColor = UIColor.white
             image.value = 75.0
             image.color = randomColor()
             image.backgroundColor = image.color

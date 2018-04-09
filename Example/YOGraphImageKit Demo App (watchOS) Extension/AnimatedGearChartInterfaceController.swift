@@ -7,10 +7,10 @@ class AnimatedGearChartInterfaceController: BaseInterfaceController {
         super.didAppear()
         
         let chart = YOChart.AnimatedGearChart
-        let frame = CGRectMake(0, 0, contentFrame.width, contentFrame.height / 1.5)
-        let imgs = chart.drawImage(frame, scale: WKInterfaceDevice.currentDevice().screenScale) as! [UIImage]
-        self.imageView.setImage(UIImage.animatedImageWithImages(imgs, duration: 0.75))
-        self.imageView.startAnimatingWithImagesInRange(NSRange.init(location: 0, length: imgs.count), duration: 0.75, repeatCount: 1)
+        let frame = CGRect(x: 0, y: 0, width: contentFrame.width, height: contentFrame.height / 1.5)
+        let imgs = chart.drawImage(frame: frame, scale: WKInterfaceDevice.current().screenScale) as! [UIImage]
+        self.imageView.setImage(UIImage.animatedImage(with: imgs, duration: 0.75))
+        self.imageView.startAnimatingWithImages(in: NSRange.init(location: 0, length: imgs.count), duration: 0.75, repeatCount: 1)
     }
     
 }

@@ -26,7 +26,7 @@
 
     [_values enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *_) {
         CGFloat ratioY = number.floatValue / maxValue;
-        CGFloat offsetY = ratioY == 0.0 ? -_strokeWidth / 2 : _strokeWidth / 2;
+        CGFloat offsetY = ratioY == 0.0 ? -self->_strokeWidth / 2 : self->_strokeWidth / 2;
         NSValue *pointValue = [NSValue valueWithCGPoint:(CGPoint){
             (float)idx * pointX,
             frame.size.height * (1 - ratioY) + offsetY
@@ -79,7 +79,7 @@
     [points enumerateObjectsUsingBlock:^(NSValue *value, NSUInteger idx, BOOL *_) {
         CGPoint p2 = value.CGPointValue;
 
-        if (_smooth) {
+        if (self->_smooth) {
             CGFloat deltaX = p2.x - p1.x;
             CGFloat controlPointX = p1.x + (deltaX / 2);
             CGPoint controlPoint1 = (CGPoint){controlPointX, p1.y};
