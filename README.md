@@ -55,7 +55,7 @@ image.strokeWidth = 4.0              // width of line
 image.strokeColor = randomColor()    // color of line
 image.values = [0.0, 1.0, 2.0]       // chart values
 image.smooth = false                 // disable smooth line
-image.drawImage(frame, scale: scale) // draw an image
+image.draw(frame, scale: scale) // draw an image
 ```
 
 #### smooth
@@ -68,7 +68,7 @@ image.strokeWidth = 4.0              // width of line
 image.fillColor = randomColor()      // color of area
 image.values = [0.0, 1.0, 2.0]       // chart values
 // image.smooth = true               // [default] draws a smooth line
-image.drawImage(frame, scale: scale) // draw an image
+image.draw(frame, scale: scale) // draw an image
 ```
 
 ### Bar chart
@@ -82,8 +82,8 @@ let image = YOBarChartImage()
 image.values = [0.0, 1.0, 2.0]       // chart values
 image.fillColor = randomColor()      // color of bars
 // image.barPadding = 2.0            // [optional] padding of bars
-// image.barStyle = .Vertical        // [default] draws a vertical bars
-image.drawImage(frame, scale: scale) // draw an image
+// image.barStyle = .vertical        // [default] draws a vertical bars
+image.draw(frame, scale: scale) // draw an image
 ```
 
 #### Horizontal
@@ -95,8 +95,8 @@ let image = YOBarChartImage()
 image.values = [0.0, 1.0, 2.0]       // chart values
 image.fillColor = randomColor()      // color of bars
 // image.barPadding = 2.0            // [optional] padding of bars
-image.barStyle = .Horizontal         // draws a horizontal bars
-image.drawImage(frame, scale: scale) // draw an image
+image.barStyle = .horizontal         // draws a horizontal bars
+image.draw(frame, scale: scale) // draw an image
 ```
 
 ### Donut chart
@@ -107,19 +107,19 @@ image.drawImage(frame, scale: scale) // draw an image
 let image = YODonutChartImage()
 image.donutWidth = 16.0                           // width of donut
 // image.labelText = "LABEL"                      // [optional] center label text
-// image.labelColor = UIColor.whiteColor()        // [optional] center label color
+// image.labelColor = UIColor.white        // [optional] center label color
 image.values = [10.0, 20.0, 70.0]                 // chart values
 image.colors = (0..<3).map { _ in randomColor() } // colors of pieces
-image.drawImage(frame, scale: scale)              // draw an image
+image.draw(frame, scale: scale)              // draw an image
 ```
 
 ## Framework Requirements
 
-- watchOS ~> 2.0
+- watchOS ~> 3.0
 
 ## Build Requirements
 
-- Xcode >= 7.1
+- Xcode >= 9.3
 
 ## Example Application
 
