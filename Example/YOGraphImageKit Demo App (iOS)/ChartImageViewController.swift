@@ -15,7 +15,7 @@ class ChartImageViewController: UIViewController {
         }
         else {
             imageView.image = nil;
-            imageView.animationImages = result as! [UIImage]
+            imageView.animationImages = result as? [UIImage]
             imageView.animationRepeatCount = 1
             imageView.animationDuration = 0.5
             imageView.image = (result as! [UIImage]).last

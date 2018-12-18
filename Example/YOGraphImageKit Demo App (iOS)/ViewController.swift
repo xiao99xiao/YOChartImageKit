@@ -16,9 +16,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         pageController.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
 
         self.pageViewController = pageController
-        addChildViewController(pageViewController!)
+        addChild(pageViewController!)
         self.view.addSubview(pageViewController!.view)
-        pageViewController!.didMove(toParentViewController: self)
+        pageViewController!.didMove(toParent: self)
 
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.gray

@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "7.0"
   s.watchos.deployment_target = "2.0"
 
+  s.swift_version    = '4.2'
+
   s.requires_arc = true
 
   s.source_files = "Source/**/*.{h,m}"
