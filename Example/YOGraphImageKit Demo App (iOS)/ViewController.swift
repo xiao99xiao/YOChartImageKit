@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
         let chartImageVC = viewController as! ChartImageViewController
-        if let currentIndex = charts.index(of: chartImageVC.chart) {
+        if let currentIndex = charts.firstIndex(of: chartImageVC.chart) {
             let beforeIndex = Int(currentIndex) - 1
             return getItemController(itemIndex: beforeIndex)
         }
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
         let chartImageVC = viewController as! ChartImageViewController
-        if let currentIndex = charts.index(of: chartImageVC.chart) {
+        if let currentIndex = charts.firstIndex(of: chartImageVC.chart) {
             let afterIndex = Int(currentIndex) + 1
             return getItemController(itemIndex: afterIndex)
         }
